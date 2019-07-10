@@ -20,7 +20,9 @@ Bu komutu kullanarak artık programımızın istediğimiz  yerinde bu PI değiş
 
 main() : Bu fonksiyon C programlama dersinde olduğu gibi C++ programlama dili için de ana fonksiyondur ve diğer fonksiyonların çalışması için gereklidir.
 
-==== Yaım Biçimi:  C++ büyük-küçük harfe duyarlı bir dildir. Örneğin karakter tipinin değişkeni char’dırr. Eğer bunun yerine Char veya CHAR yazarsanız derleyici bunu anlayamaz. 
+=== Yaım Biçimi
+
+C++ büyük-küçük harfe duyarlı bir dildir. Örneğin karakter tipinin değişkeni char’dırr. Eğer bunun yerine Char veya CHAR yazarsanız derleyici bunu anlayamaz. 
 
 Harf duyarlılığının yanında C++ dili aşağıdak özelliklere de sahiptir:
 

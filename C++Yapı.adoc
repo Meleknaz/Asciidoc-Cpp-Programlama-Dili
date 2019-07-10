@@ -45,4 +45,20 @@ Harf duyarlılığının yanında C++ dili aşağıdak özelliklere de sahiptir:
 C++ dili okunabilirliği kolaylaştırmak için whitespace kullanımına izin verir. Bir kaç istisna dışında derleyici whitespace karakterleri görmezden gelir.
 
 
+=== C++ İfadeleri
+
+Bir C++ programı fonksiyon, metot, sınıf gibi çeşitli bileşenlerden oluşur. Burada bulunan ifadeleri C++ kodunuzda kullanacsınız:
+
+  * Tanımlamalar – Bunlar uygulamanızda kullanmak üzere değişken ve sabit tanımlamanızı sağlar.
+    
+  *  Atamalar – Bunlar değişkenlerinize değer atamanızı sağlar.
+    
+  * Önişlemci Yönergeleri
+    
+   * Yorum Satırları – Kodunuzun içerisinde dökümanlama yapmak için kullanılır.
+    
+  *  Fonksiyon Tanımlamaları
+
+
+
 

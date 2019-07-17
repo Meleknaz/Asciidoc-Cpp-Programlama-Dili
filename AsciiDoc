@@ -1,0 +1,265 @@
+ !1!2 farklı seviye başlık  için kendi örnek metninizi ekleyiniz.
+
+= Asciidoctor Nedir ?
+
+Asciidoctor, AsciiDoc içeriğini HTML5, DocBook, PDF ve diğer biçimlere dönüştürmek için kullanılan hızlı ve açık kaynaklı bir metin işlemcisi ve yayın aracıdır. Asciidoctor Ruby'de yazılmıştır ve tüm büyük işletim sistemlerinde çalışır. Kurulumu kolaylaştırmak için Asciidoctor, RubyGems.org'a bir mücevher olarak paketlenir ve dağıtılır ve popüler Linux dağıtımları ve macOS için paketlenir. Asciidoctor ayrıca AsciidoctorJ kullanarak bir JVM'de veya Asciidoctor.js kullanarak herhangi bir JavaScript ortamında da çalıştırılabilir. Asciidoctor projesi GitHub'da barındırılmaktadır.
+
+== Asciidoc Kullanımı:
+Asciidoc zengin bir metin işaretleme dilidir. Barındırdığı çoklu dil özellikleri ile Markdown gibi basit metin işaretleme dillerinden ayrılmaktadır.HTML standardındaki gibi 5 seviyeli başlıklar tanımlayabiliyoruz.Her satıra bir cümle yazmaya çalışın. Bu, bu cümleyi kolayca aramanızı ve okunması kolay özlü açıklamalar kullanmanızı sağlar. Bu aynı zamanda en sevdiğiniz metin düzenleyicide cümleyi hareket ettirmeyi de kolaylaştırır.
+
+ !2!Numarali ve numarasiz maddeler icin linux ile ilgili örnek metinler ekleyiniz.
+
+=== Temel belge Özellikleri:
+
+* Başlık
+
+**Başlık, .adoc dosyasının en üstünde;
+''*= Belgenin Başlığı*'' şeklindedir.
+
+* Alt Yazı
+
+** Bir altyazı tanımlamak istiyorsanız :  başlıktan sonra bir harf (boşluk bırakarak işaretleyin)
+
+* Yazar
+
+** Yazar, başlıktan hemen sonra bir öznitelik olsun veya olmasın yazılabilir.Yazar ayrıca köşeli parantez içerisindeki bilgileri bir E-posta veya URL olarak da içerebilir. Bir yazar listesine sahip olmak mümkündür. Birden çok yazar ve e-postaları noktalı virgül ve boşlukla ayrılır;"
+
+*yazar:Meleknaz Ablak<meleknaz1136@gmail.com*" şeklindedir.
+
+ !3!Admonition ile 3 farklı uyarı ekleyiniz.
+
+NOTE:  * Bu koyu yazıdır *, _Bu cursiv metin_ ,`Bu mono metindir 'metninizi vurgulamak için bu üç yöntem kullanılabilir.
+
+TIP: Asciidoc otomatik olarak kaynak koddaki sekmeleri boşluklarla değiştirir. Öznitelik ile sekme başına ayarlanacak boşluk miktarını ayarlayabilirsiniz :tabsize: 2. Bu durumda bir sekme 2 boşluk ile değiştirilecektir.
+
+ !4!link
+ 
+:homepage: https://asciidoctor.org
+ 
+*https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#links örnekleri)*
+
+* Link
+
+Daha fazla bilgi edinmek için link'i ziyaret ediniz.
+
+https://asciidoctor.org - automatic!
+
+https://asciidoctor.org[Asciidoctor]
+
+https://github.com/asciidoctor[Asciidoctor @ *GitHub*]
+
+ !5!resim, 
+ 
+*https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#images örnekleri)* 
+
+* Resim
+
+IMPORTANT: Görüntüler belirli bir dizinde bulunuyorsa, örneğin img, bu klasörü belgenizin başlığında belirtebilirsiniz; görüntünün içe aktarılması yalnızca klasörün adı olmadan görüntünün adını içerecektir. Lütfen :imagesdir:klasörün adı ile adı arasında boşluk bırakmanız gerektiğini unutmayın .
+
+IMPORTANT: Resim anahtar kelimesini makrodaki (yani image::) takip eden iki sütun bir blok resmi (aka şekil image:) belirtirken , resim anahtar kelimesini takip eden iki nokta (yani ) bir satır içi resmi gösterir. (Tüm makrolar bu deseni izler). Görüntüyü bir metin satırına yerleştirmeniz gerektiğinde satır içi bir görüntü kullanırsınız. Aksi takdirde, blok formunu tercih etmelisiniz.
+
+image::sunset.jpg[]
+
+image::sunset.jpg[Sunset]
+
+.A mountain sunset
+[#img-sunset]
+[caption="Figure 1: ",link=https://www.flickr.com/photos/javh/5448336655]
+image::sunset.jpg[Sunset,300,200]
+
+
+ !6!Video 
+ 
+*https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#videos)*
+
+* Video
+
+====== Blok
+
+ video::video_file.mp4[]
+ !1!2 farklı seviye başlık  için kendi örnek metninizi ekleyiniz.
+
+= Asciidoctor Nedir ?
+
+Asciidoctor, AsciiDoc içeriğini HTML5, DocBook, PDF ve diğer biçimlere dönüştürmek için kullanılan hızlı ve açık kaynaklı bir metin işlemcisi ve yayın aracıdır. Asciidoctor Ruby'de yazılmıştır ve tüm büyük işletim sistemlerinde çalışır. Kurulumu kolaylaştırmak için Asciidoctor, RubyGems.org'a bir mücevher olarak paketlenir ve dağıtılır ve popüler Linux dağıtımları ve macOS için paketlenir. Asciidoctor ayrıca AsciidoctorJ kullanarak bir JVM'de veya Asciidoctor.js kullanarak herhangi bir JavaScript ortamında da çalıştırılabilir. Asciidoctor projesi GitHub'da barındırılmaktadır.
+
+== Asciidoc Kullanımı:
+Asciidoc zengin bir metin işaretleme dilidir. Barındırdığı çoklu dil özellikleri ile Markdown gibi basit metin işaretleme dillerinden ayrılmaktadır.HTML standardındaki gibi 5 seviyeli başlıklar tanımlayabiliyoruz.Her satıra bir cümle yazmaya çalışın. Bu, bu cümleyi kolayca aramanızı ve okunması kolay özlü açıklamalar kullanmanızı sağlar. Bu aynı zamanda en sevdiğiniz metin düzenleyicide cümleyi hareket ettirmeyi de kolaylaştırır.
+
+ !2!Numarali ve numarasiz maddeler icin linux ile ilgili örnek metinler ekleyiniz.
+
+=== Temel belge Özellikleri:
+
+* Başlık
+
+**Başlık, .adoc dosyasının en üstünde;
+''*= Belgenin Başlığı*'' şeklindedir.
+
+* Alt Yazı
+
+** Bir altyazı tanımlamak istiyorsanız :  başlıktan sonra bir harf (boşluk bırakarak işaretleyin)
+
+* Yazar
+
+** Yazar, başlıktan hemen sonra bir öznitelik olsun veya olmasın yazılabilir.Yazar ayrıca köşeli parantez içerisindeki bilgileri bir E-posta veya URL olarak da içerebilir. Bir yazar listesine sahip olmak mümkündür. Birden çok yazar ve e-postaları noktalı virgül ve boşlukla ayrılır;"
+
+*yazar:Meleknaz Ablak<meleknaz1136@gmail.com*" şeklindedir.
+
+ !3!Admonition ile 3 farklı uyarı ekleyiniz.
+
+NOTE:  * Bu koyu yazıdır *, _Bu cursiv metin_ ,`Bu mono metindir 'metninizi vurgulamak için bu üç yöntem kullanılabilir.
+
+TIP: Asciidoc otomatik olarak kaynak koddaki sekmeleri boşluklarla değiştirir. Öznitelik ile sekme başına ayarlanacak boşluk miktarını ayarlayabilirsiniz :tabsize: 2. Bu durumda bir sekme 2 boşluk ile değiştirilecektir.
+
+ !4!link
+ 
+:homepage: https://asciidoctor.org
+ 
+*https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#links örnekleri)*
+
+* Link
+
+Daha fazla bilgi edinmek için link'i ziyaret ediniz.
+
+https://asciidoctor.org - automatic!
+
+https://asciidoctor.org[Asciidoctor]
+
+https://github.com/asciidoctor[Asciidoctor @ *GitHub*]
+
+ !5!resim, 
+ 
+*https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#images örnekleri)* 
+
+* Resim
+
+IMPORTANT: Görüntüler belirli bir dizinde bulunuyorsa, örneğin img, bu klasörü belgenizin başlığında belirtebilirsiniz; görüntünün içe aktarılması yalnızca klasörün adı olmadan görüntünün adını içerecektir. Lütfen :imagesdir:klasörün adı ile adı arasında boşluk bırakmanız gerektiğini unutmayın .
+
+IMPORTANT: Resim anahtar kelimesini makrodaki (yani image::) takip eden iki sütun bir blok resmi (aka şekil image:) belirtirken , resim anahtar kelimesini takip eden iki nokta (yani ) bir satır içi resmi gösterir. (Tüm makrolar bu deseni izler). Görüntüyü bir metin satırına yerleştirmeniz gerektiğinde satır içi bir görüntü kullanırsınız. Aksi takdirde, blok formunu tercih etmelisiniz.
+
+image::sunset.jpg[]
+
+image::sunset.jpg[Sunset]
+
+.A mountain sunset
+[#img-sunset]
+[caption="Figure 1: ",link=https://www.flickr.com/photos/javh/5448336655]
+image::sunset.jpg[Sunset,300,200]
+
+
+ !6!Video 
+ 
+*https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#videos)*
+
+* Video
+
+====== Blok
+
+ video::video_file.mp4[]
+
+ video::video_file.mp4[width=640, start=60, end=140, options=autoplay]
+
+====== Gömülü youtube videosu
+ 
+ video::rPQoq7ThGAU[youtube]
+ 
+====== Gömülü vimeo videosu
+ 
+ video::67480300[vimeo]
+ 
+ * KOD
+
+ !7!C++ kaynak kod
+ 
+*https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#source-code)*
+ 
+.Editable.c++
+[source,c++]
+----
+ 
+#include<iostream> // <1>
+
+int main() ;;<2>
+
+{ // <3>
+
+cout<<"hello world"<<endl; # <4>
+
+return 0; ;; <5>
+
+} // <6>
+----
+
+<1> Burası direk olarak ön işlemci olarak bilinir.Derleyiciye bir dosya yerleştirme talimati verir.Bu dosya iostream kütüphanesi için gerekli kodları içerir.Bu kütüphane input,output kullanmaya izin veren kodları içerir. 
+
+<2> Her C++ programı main isimli metoda sahip olmalıdır.Burası uygulamanın başlangıç noktasıdır.Kodlar yorumlanmaya bu satırdan başlanır.int kelimesi metodun dönüş tipidir.
+
+<3> C++ da metodların gövdesi bu karakter ile başlar.
+
+<4> Bu kod cout methodunu kullanır.cout ekrana hello world yazdırır.:: ise cout’un std isim uzayına ait olduğunu belirtir.
+
+<5>  Bir metodun çağırana geri dönmesi gerektiği zaman,return deyimi o metodu bitirmek için kullanılır.Bu örnekte döndürülen tamsayı değeri sıfırdır.Program bu noktaya gelirse 0 dönmesi demek programın doğru çalıştığını gösterir.
+
+<6> Bu karakter main metodunun gövdesini kapatır ve derleyeici metodun nerde bittiğini bilir.Metoddan farklı olarak bazı işlevler içinde kullanılır.
+
+
+* Tablo
+
+ !8!tablo  
+ 
+*https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#tables)*
+eklemeniz gerekir. 
+
+
+.AsciiDoc
+[width="100%",options="header,footer"]
+|====================
+Sütun  1 Adı 
+Sütun  2 Adı
+
+|Sütun 1'deki hücre, satır 1
+|Sütun 2'deki hücre, satır 1
+
+|Sütun 1'deki hücre, satır 2
+|Sütun 2'deki hücre, satır 2
+|====================
+                              
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+

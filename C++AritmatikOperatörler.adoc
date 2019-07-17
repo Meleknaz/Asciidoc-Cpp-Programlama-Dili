@@ -1,0 +1,125 @@
+====== Aritmetik Operatörler
+
+Aritmetik operatörler bizim matematikten bildiğimiz dört işlem ve modül alma işlemidir. Aşağıdaki tabloda aritmetik operatörlerini listeledim.
+
+
+
+.Aritmetik Operatörler
+[width="100%",options="header,footer"]
+|====================
+|Operatör| Açıklama 
+|  +| Toplama işlemi yapar. 
+|  -|  	Çıkarma işlemi yapar. 
+|  *| Çarpma işlemi yapar. 
+|  /| Bölme işlemi yapar.
+|  %| 	Modül alma işlemi yapar.
+|====================
+
+.Editable.c++
+[source,c++]
+----
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int sayi1 = 8, sayi2 = 4;
+
+	cout << "iki sayinin toplami: " << sayi1 + sayi2 << endl;
+	cout << "iki sayinin farki: " << sayi1 - sayi2 << endl;
+	cout << "iki sayinin carpimi: " << sayi1 * sayi2 << endl;
+	cout << "iki sayinin bolumu: " << sayi1 / sayi2 << endl;
+
+	system("pause");
+
+    return 0;
+}
+----
+
+Programın çıktısı şu şekilde olmalıdır:
+
+https://i0.wp.com/firateski.com/wp-content/uploads/2015/12/dort-islem-ornek.png
+
+Art arda cout kodu yazmak yerine bu işlemi şu kodla da yapabilirdik:
+
+.Editable.c++
+[source,c++]
+----
+cout << "iki sayinin toplami: " << sayi1 + sayi2 << endl << "iki sayinin farki: " << sayi1 - sayi2 << endl << "iki sayinin carpimi: " << sayi1 * sayi2 << endl << "iki sayinin bolumu: " << sayi1 / sayi2 << endl;
+
+----
+
+Sizlerinde fark edeceği gibi bu şekilde kodlar karmaşık duruyor. O nedenle ayrı ayrı yazılması tercih edilir.
+
+Şimdi ise aynı örneği yapacağız ama bu sefer değişkenlere ilk değeri vermek yerine kullanıcıdan bu 2 sayıyı girmesini isteyeceğiz.
+
+.Editable.c++
+[source,c++]
+----
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int sayi1, sayi2;
+
+	cout << "ilk sayiyi giriniz: ";
+
+	cin >> sayi1;
+
+	cout << "ikinci sayiyi giriniz: ";
+
+	cin >> sayi2;
+
+	cout << "iki sayinin toplami: " << sayi1 + sayi2 << endl;
+	cout << "iki sayinin farki: " << sayi1 - sayi2 << endl;
+	cout << "iki sayinin carpimi: " << sayi1 * sayi2 << endl;
+	cout << "iki sayinin bolumu: " << sayi1 / sayi2 << endl;
+
+	system("pause");
+
+    return 0;
+}
+----
+
+Programın çıktısı şu şekilde olmalıdır:
+
+https://i2.wp.com/firateski.com/wp-content/uploads/2015/12/dort-islem-ornek2.png
+
+====== Mod Alma İşlemi
+
+Modun ne olduğu belki bileniniz vardır. Mod; 1. sayının 2. sayıya bölümünden kalandır. Hemen örnekle pekiştirelim:
+
+.Editable.c++
+[source,c++]
+----
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int a = 8, b = 4, c = 3;
+
+	cout << "8 mod 4:  " << a % b << endl;
+	cout << "8 mod 3:  " << a % c << endl;
+	cout << "4 mod 3:  " << b % c << endl;
+
+	system("pause");
+
+	return 0;
+}
+----
+
+Programın çıktısı şu şekilde:
+
+https://i2.wp.com/firateski.com/wp-content/uploads/2015/12/mod-alma-ornek.png
+
+
+
+
+
+

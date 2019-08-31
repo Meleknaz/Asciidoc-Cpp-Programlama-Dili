@@ -1,0 +1,112 @@
+= C++ SETW() FONKSİYONU
+
+*cout* ile görüntülenen her değerin bir alan kapladığını düşünebilirsiniz.Bu alan, belli genişliği olan hayali bir kutudur.Varsayılan alan, karşılık gelen değeri saklamaya yetecek genişliktedir.Yani, 567 sayısı üç karakter genişliğinde; "programcı" karakter katarı ise dokuz karakter genişliğinde yer kaplar.Ancak belli bazı durumlarda bu, optimal bir sonuca götürmez.Bir sütunda üç şehrin isimlerini, diğer sütunda bu şehirlerin nüfusunu görünteleyen örnek verelim. Örnekte ilk başta setw() kullanmadan yazılan programın önizlemesine bakalım. Daha sonra ise setw() kullanarak yazılan programın önizlemesine bakalım. Bu sayede setw() fonksiyonunun özelliğini daha net anlayabiliriz.
+
+.Editable.c++
+[source,c++]
+----
+
+#include <iostream> 
+using namespace std; 
+int main()
+{
+long nuf1=5503985, nuf2=24, nuf3=1740;
+cout << "SEHIRLER " <<"NUFUS "<<endl
+     <<"Ankara  " << nuf1 <<endl
+     <<"Bayburt " << nuf2 <<endl
+     <<"Artvin  " << nuf3 <<endl;
+     
+     return 0;
+      
+}
+
+----
+
+Bu programın çıktısı şu şöyledir:
+
+----
+
+SEHIRLER NUFUS
+Ankara  5503985
+Bayburt 24
+Artvin  1740
+
+----
+
+Ne yazık ki, bu format sayıları karşılaştırmayı zorlaştırır.Sayılar sağa dayalı listelenmiş olsa daha iyi olurdu.Ayrıca, şehir isimlerini sayılardan ayırmak için program içinde şehir isimlerinin sonuna boşluk eklemek zorunda kaldık.Bu da uygun olmayan bir durumdur.
+
+Şimdi bu programın değiştirilmiş bir versiyonunu yazalım.Yukarıdaki problemleri ortadan kaldırmak amacıyla,** isimler ve sayılar için alan genişliği tanımlamayı sağlayan setw() fonksiyonu** kullanılır.
+
+
+.Editable.c++
+[source,c++]
+----
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+
+{
+	long nuf1=5503985, nuf2=24, nuf3=1740;
+	
+    cout << setw(8) << "SEHIRLER " << setw(12) << "NUFUS "<<endl
+         << setw(8) << "Ankara"  << setw(12) <<nuf1 <<endl
+         << setw(8) << "Bayburt" << setw(12) <<nuf2 <<endl
+         << setw(8) << "Artvin"  << setw(12) <<nuf3 <<endl;
+     return 0;
+}
+
+----
+
+Bu programın çıktısı şu şöyledir:
+
+----
+
+SEHIRLER       NUFUS
+  Ankara     5503985
+ Bayburt          24
+  Artvin        1740
+  
+----
+
+*setw* fonksiyonu, ekrana basılacak sayı (veya karakter katarının) *n* karakter genişliğindeki bir alana yazılmasını sağlar.Buradaki n, *setw(n)* fonksiyonunun argümanıdır.Değer, alan içinde sağa dayalı olarak yazılır.Nüfus bilgileri için *long* tipi kullanılır.En büyük değerin 32,767 olduğu, 2 byte yer kaplayan tamsayı tipi kullanan sistemlerde potansiyel taşma problemlerini önlemek için bu tanımlama yapılır.
+
+
+== IOMANIP Başlık Dosyası
+
+*<iomanip>* kütüphanesi C++ da akışların yani Giriş/Çıkış (İnput/Output) birimlerinin belirli formatlarda yazdırma fonksiyonlarını içeren bir kütüphanedir.Bir başka deyişle *endl* haricindeki manipülatörlerin tanımlarını genellikle *IOSTREAM* başlık dosyasında değildir;
+*IOMANIP* denilen ayrı bir dosya içindedir.
+
+
+
+<iomanip> kütüphanesinde birçok fonksiyon vardır. Bunlar: 
+
+* setw()-width()
+
+* setfill()
+
+* setprecision()
+
+* setbase() - resetiosflags()
+
+* setf() - unsutf()
+
+* setiosflags()
+
+
+=== Ekleme Operatörünün Basamaklandırılması
+
+Yukarıdaki iki programdada sadece bir tane *cout* ifadesi olduğuna dikkat ediniz.Gerçi bir kaç satır uzunluğunda olsa da, yine de her iki programda tek bir *cout* ifadesi mevcuttur.Bunu böyle yaparken, derleyicinin boşlukları dikkate almamasından ve ekleme operatörünü de peşpeşe(cascade) kullanabilme avantajlarından yararlanıyoruz.Bu işlem, her biri *cout* ile başlayan dört ayrı ifade yazmakla aynı etkiye sahiptir.
+
+
+=== Çoklu Tanımlama 
+
+**nuf1**, *nuf2* ve *nuf3* değişkenlerini tanımlarken, aynı zamanda ilk değerlerinide atadık.Ayrıca burada her üç değişkeni tek satırda, *long* anahtar kelimesi kullanarak ve değişken isimlerini virgül ile ayırarak tanımladık.Birkaç tane değişkenin aynı tipte olduğu durumlarda bu yöntem alandan kazandırır.
+
+
+
+
+    

@@ -1,0 +1,261 @@
+= C++  Örnekleri
+
+NOTE: C ++ 'da bir string'deki karakter sayısını nasıl hesaplayabiliriz?
+
+
+==== size() ve length()
+
+C++'de de standart dizgilerin (string) karakter sayısını size() veya length() fonksiyonları ile hesaplayabiliriz.Bu fonksyonların kullanımı için programın üst kısmına *#include <string.h>* kütüphanesini eklememiz gerekmektedir.
+
+
+Örneğin;
+
+.Editable.c++
+
+[source,c++]
+
+----
+
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+int main()
+{
+    string str = "C++ Programcisi";
+    
+    cout << "String uzunlugu = " << str.size();
+    // str.length() de kullanılabilir
+    return 0;
+}
+
+----
+
+Çıktı:
+
+----
+
+String uzunlugu =15
+
+----
+
+Bir Cpp-string dizesinin uzunluğunu almak için, strlen() işlevi de kullanılabilir.
+
+.Editable.c++
+
+[source,c++]
+
+----
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+int main()
+{
+    char str[] = "C++ Programlama Ornekleri";
+   
+    cout << "String Uzunlugu = " << strlen(str);
+    // str.length() de kullanılabilir
+    return 0;
+}
+
+----
+
+Çıktı:
+
+----
+
+String uzunlugu =25
+
+----
+
+NOTE:  C ++ da bir dizeki karakterlerin sıklığını nasıl hesaplarız? 
+
+Bunu yapmak için, size() işlev bir dize nesnesinin uzunluğunu bulmak için kullanılır. Ardından, for döngüsü dizenin sonuna kadar yinelenir.
+
+Her yinelemede, karakterin oluşumu kontrol edilir ve bulunursa, sayının değeri 1 ile artırılır.
+
+Örneğin;
+
+.Editable.c++
+
+[source,c++]
+
+----
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+    string str = "C++ Programlama Ornekleri";
+    char ArananKarakter = 'a';
+    int adet = 0;
+    for (int i = 0; i < str.size(); i++)
+    {
+        if (str[i] ==  ArananKarakter)
+        {
+            ++ adet;
+        }
+    }
+    cout << "adet " << ArananKarakter << " = " << adet;
+    return 0;
+}
+
+----
+
+Çıktı:
+
+----
+
+adet a = 3
+
+----
+
+Aşağıdaki örnekte ise döngü *'\ 0'* (NULL) boş karakteriyle karşılaşılana kadar yinelenir . Boş karakter dizgenin sonunu gösterir.
+Her yinelemede karakterin oluşumu kontrol edilir.
+
+.Editable.c++
+
+[source,c++]
+
+----
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+int main()
+{
+   char c[] = "C++ programlama kolay degil.", ArananKarakter = 'm';
+   int adet = 0;
+   for(int i = 0; c[i] != '\0'; ++i)
+   {
+       if(ArananKarakter == c[i])
+           ++adet;
+   }
+   cout << "Adet " << ArananKarakter <<  " = " << adet;
+   return 0;
+}
+
+----
+
+
+Çıktı:
+
+----
+
+Adet m = 2
+
+----
+
+NOTE:  C ++ 'da ünlü harf, ünsüz harf, rakam ve boşluk sayılarını bulma program?
+
+.Editable.c++
+
+[source,c++]
+
+----
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+int main()
+{
+    char line[150];
+    
+    int unluler, unsuzler, rakamlar, bosluklar;
+    
+    unluler = unsuzler = rakamlar = bosluklar = 0
+    ;
+    cout << "bir adet cumle giriniz: ";
+    cin.getline(line, 150);
+    
+    for(int i = 0; line[i]!='\0'; ++i)
+    {
+        if(line[i]=='a' || line[i]=='e' || line[i]=='i' ||
+           line[i]=='o' || line[i]=='u' || line[i]=='A' ||
+           line[i]=='E' || line[i]=='I' || line[i]=='O' ||
+           line[i]=='U')
+        {
+            ++unluler;
+        }
+        else if((line[i]>='a'&& line[i]<='z') ||    (line[i]>='A'&& line[i]<='Z'))
+        {
+            ++unsuzler;
+        }
+        else if(line[i]>='0' && line[i]<='9')
+        {
+            ++rakamlar;
+        }
+        else if (line[i]==' ')
+        {
+            ++bosluklar;
+        }
+    }
+    cout << "Unluler: " << unluler << endl;
+    cout << "Unsuzler: " << unsuzler << endl;
+    cout << "Rakamlar: " << rakamlar << endl;
+    cout << "Bosluklar: " << bosluklar << endl;
+    return 0;
+}
+
+----
+
+Çıktı:
+
+----
+
+bir adet cumle giriniz: Merhaba bugun ayin 7 si 2019
+Unluler: 8
+Unsuzler: 10
+Rakamlar: 5
+Bosluklar: 5
+
+----
+
+NOTE: C ++ da alfabedeki harfler hariç dizeki tüm karakterleri silen program?
+
+.Editable.c++
+
+[source,c++]
+
+----
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+
+    string line;
+    
+    cout << "bir adet cumle giriniz: ";
+    getline(cin, line);
+    
+    for(int i = 0; i < line.size(); ++i)
+    {
+        if (!((line[i] >= 'a' && line[i]<='z') || (line[i] >= 'A' && line[i]<='Z')))
+        {
+            line[i] = '\0';
+        }
+    }
+    cout << "Yeni cumleniz " << line;    
+    return 0;
+}
+
+----
+
+Çıktı:
+
+----
+
+bir adet cumle giriniz: Merhaba , bugun 07.09.2019 tarihli gun.
+
+Yeni cumleniz Merhaba   bugun            tarihli gun
+
+----
+

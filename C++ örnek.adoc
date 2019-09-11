@@ -1,0 +1,59 @@
+= C++  Örnekleri
+
+====== soru:
+
+Kullanıcının girdiği sayının rakamları toplamının bir rakama eşit olmasını sağlayan C++ programını yazınız.
+
+.Editable.c++
+
+[source,c++]
+
+----
+
+
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+	int sayi, sonuc;
+
+    cout<<"Bir adet sayi giriniz:";
+    cin>>sayi;
+    
+	if(sayi)
+		sonuc = sayi % 9 == 0 ? 9 : sayi % 9 ;
+	else 
+		sonuc = 0;
+
+	cout<<"Sonuc: "<<sonuc;
+
+	return 0;
+}
+
+----
+
+----
+Çıktı:
+
+Bir adet sayi giriniz:147
+Sonuc: 3
+
+----
+
+*Açıklama:*
+
+Her sayı için bölünebilirlik kuralları vardır. 9 için bölünme kuralı, rakamların toplamının 9 ile bölünebilmesi gerektiğini söylüyor. Şimdi, eğer toplam 9 ile tamamen bölünebiliyorsa 9 değerini döndürelim. Örneğin, 9 + 9 = 18 ve 1 + 8 sayın 99 = 9 . Dolayısıyla kural takip eder.
+
+Ancak bölünemeyen sayılar için, 9 rakamının en büyük tek haneli sayı olması nedeniyle, rakamların toplamı olan kalanı yazdıracağız. Modül 9'u bu sayıya uygularsak, rakamların toplamı olan son kalanı alırız. Çünkü, 9 sayısı en büyük tek haneli sayıdır. Böylece modülü uyguladıktan sonra son toplamı döndürür.
+
+Şimdi, sayının sıfır olup olmadığını kontrol ediyoruz. Aksi takdirde, 9 ile bölünebilirliğini kontrol edin. Bölünebilir ise, 9 değerini, aksi takdirde % 9 değerini girin . 0 ise, sadece 0 yazdırın.
+
+Giriş: Bir numara girin: 147 
+
+Çıktı: 3 
+
+Açıklama: 147 → 1 + 4 + 7 = 12 → 1 + 2 = 3
+
+
+

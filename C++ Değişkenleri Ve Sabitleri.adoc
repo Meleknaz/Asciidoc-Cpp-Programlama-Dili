@@ -1,0 +1,136 @@
+
+= C++ Değişkenleri Ve Sabitleri Örnekleri
+
+Soru:Lucas serisini N terimine kadar basmak için
+bir C ++ programı yapınız.
+
+Lucas serisi
+
+Lucas serisi Fransız matematikçi adını Fibonacci
+serisine çok benzer bir tamsayı dizisidir.
+Lucas serisinin her terimi, dizinin önceki iki
+teriminin toplamı olarak tanımlanır, ilk iki terim
+sırasıyla 2 ve 1'dir.
+
+
+.Editable.c++
+
+[source,c++]
+
+----
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int n, i, t1 = 2, t2 = 1, tn;
+	cout << "Lucas serisinde istenilen terimlerin numarasını girin: ";
+	cin >> n;
+	
+	if (n == 1)
+		cout << endl << 2 << endl;
+	else if (n == 2)
+		cout << endl << 2 << endl << 1 << endl;
+	else if (n > 2)
+	{
+		cout <<endl<<"Lucas serisi "<< n<< "
+		Terimler: "<<endl<< t1 << endl << t2 << endl;
+		for (i = 0; i < n-2; i++)
+		{
+			tn = t1 + t2;
+			cout << tn << endl;
+			t1 = t2;
+			t2 = tn;
+
+		}
+	}
+
+	return 0;
+}
+----
+
+
+
+----
+
+Çıktı:
+
+İlk çalıştırma: 
+
+lucas serisinde istenen terim sayısını girin: 5 
+
+5 terim için Lucas serisi: 
+2 
+1 
+3 
+4 
+7 
+
+İkinci çalıştırma: 
+
+lucas serisinde istenen terim sayısını girin: 10 
+
+10 terim için Lucas serisi: 
+2 
+1 
+3 
+4 
+7 
+11 
+18 
+29 
+47 
+76
+
+----
+
+Sabitler "**const**" klavyesi kullanılarak bildirilebilir ve programın yürütülmesi sırasında sabitlerin değeri asla değiştirilemez.
+
+*Sözdizimi:*
+
+ const data_type constant_name = değer;
+
+Örneğin;
+
+.Editable.c++
+
+[source,c++]
+
+----
+
+#include <iostream> 
+
+using namespace std   ; 
+
+int  main ( ) 
+{ 
+	// sabitleri beyan etmek 
+	const  char 	ad[ ] = " Melek " ; 
+	const  char 	adres[ ] = " istanbul, TURKIYE " ; 
+	const  int 		yas = 17 ; 
+	const float		boy= 1.68 ;
+	
+	// sabitleri baskı değerleri 
+	cout << " Adı: " <<ad<< endl ; 
+	cout << " Yas: " <<yas<< endl ; 
+	cout << " Boy: " <<boy<< endl ; 
+	cout << " Adres: " <<adres;
+	
+return 0;
+
+}
+
+----
+
+----
+
+Çıktı:
+
+ Adi: Melek
+ Yas: 17
+ Boy: 1.68
+ Adres: istanbul, TURKIYE
+
+----
+

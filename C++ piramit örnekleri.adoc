@@ -1,0 +1,113 @@
+= C++ ÖRNEKLERİ VE ÇÖZÜMLERİ
+
+====== Örnek 1:
+
+ Sayıların dik açılı (Sağ yönelimli) piramidini basmak için C ++ programı
+ 
+açıklama;
+
+Döngüdeki satır sayısını limit olarak alırız. Dıştaki halka sıralara bakmak içindir ve içteki halka kolonları alacaktır. Bu programda, önemli olduğu için boşluğa dikkat etmemiz gerekiyor, aksi takdirde piramit doğru şekilde oluşmayacak.
+ 
+.Editable.c++
+
+[source,c++]
+
+----
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int i, j, bosluk, satir, k=1;
+
+	cout<<"Satir sayisini giriniz: ";
+	cin>>satir;
+	
+	for(i=1; i<=satir; i++) {
+		for(bosluk=i; bosluk<satir; bosluk++) {
+			cout<<"\t";
+		}
+		for(j=1;j<=i;j++) {
+			cout<<k<<"\t";
+			k++;
+		}
+		cout<<"\n";
+	}
+
+	return 0;
+}
+
+----
+
+----
+
+Çıktı:
+
+
+Satir sayisini giriniz: 8
+                                                        1
+                                                2       3
+                                        4       5       6
+                                7       8       9       10
+                        11      12      13      14      15
+                16      17      18      19      20      21
+        22      23      24      25      26      27      28
+29      30      31      32      33      34      35      36
+
+----
+
+====== Örnek 2:
+
+ Sayıların dik açılı piramidini basmak için C ++ programı
+ 
+ 
+açıklama;
+
+Döngüdeki satır sayısını limit olarak alırız. Dıştaki halka sıralara bakmak içindir ve içteki halka kolonları alacaktır. Bir sonraki tekrarlamalar için de k'nin değerini arttırmamız gerektiğinden, döngü içine j başlatıcısını eklediğimize dikkat edin . İkinci döngüden sonra yeni bir satır göstermek için yeni bir satır yazdırdık
+
+.Editable.c++
+
+[source,c++]
+
+----
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	int i, satir, j, k=1;
+
+	cout<<"Satir sayisini giriniz: ";
+	cin>>satir;
+	
+	for(i=1; i<=satir; i++) {
+		for(j=1; j<=i; j++) {
+			cout<<k<<"\t";
+			k++;
+		}
+		cout<<"\n";
+	}
+
+	return 0;
+}
+
+----
+
+----
+Çıktı:
+
+Satir sayisini giriniz: 8
+1
+2       3
+4       5       6
+7       8       9       10
+11      12      13      14      15
+16      17      18      19      20      21
+22      23      24      25      26      27      28
+29      30      31      32      33      34      35      36
+
+-----

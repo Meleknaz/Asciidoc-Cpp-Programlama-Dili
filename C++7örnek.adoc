@@ -1,0 +1,328 @@
+= C++ PROBLEMLERİ
+
+====== soru 1
+
+Bir işçinin işi bitirme süresini ve toplam işçi sayısını alarak, işin bitme süresini hesaplayan kodu yazınız.
+Örneğin;Bir işçi bir işi 10 günde yapabilmektedir.Buna göre 2 işçi aynı işi kaç günde yapar?
+
+.Editable.c++
+
+[source,c++]
+
+----
+
+#include <iostream>
+using namespace std;
+int main()
+{
+
+    int kacgun, iscisayisi;
+    
+    cout << "Bir isci isi kac gunde bitiriyor?" << endl; 
+
+    cin >> kacgun;
+    
+    cout << "Toplam kac isci calisacak?" << endl; 
+
+    cin >> iscisayisi;
+    
+    float sonuc = kacgun / iscisayisi; 
+    
+    cout << "isin bitme suresi" << sonuc << "gundur.." <<endl;
+    
+ 
+    return 0;
+}
+----
+
+----
+Çıktı;
+
+Bir isci isi kac gunde bitiriyor?
+10
+Toplam kac isci calisacak?
+2
+isin bitme suresi 5 gundur..
+----
+
+====== soru 2
+
+Bir dik üçgenin iki dik kenarını alarak hipotenüsünü hesaplayan kod yazınız.(Yardım:karakök almak için, C ve C++ dillerinde math.h dosyasını include ederek(#include<math.h>) sqrt() fonksiyonunu kullanabilirsiniz.Basitçe int x=sqrt(16); satırı sonrasında x değeri 4 olur.)
+
+.Editable.c++
+
+[source,c++]
+
+----
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main()
+{
+    cout << "Dik ucgen kontrolu" << endl;
+    
+    int a,b,c; // c yi hipotenüs olarak seçelim
+    
+    cout << "ucgenin a kenarlarini giriniz:" << endl;
+    cin >> a;
+    cout << "ucgenin b kenarlarini giriniz:" << endl;
+    cin >> b;
+    
+	c=sqrt(a*a+b*b);
+	 
+	cout<<"Hipotenus:"<<c<<endl;
+    
+    return 0;
+}
+----
+
+----
+Çıktı;
+
+Dik ucgen kontrolu
+ucgenin a kenarlarini giriniz:
+3
+ucgenin b kenarlarini giriniz:
+4
+Hipotenus:5
+----
+
+====== soru 3
+
+Hipotenüsünü bulduğunuz dik üçgenin alanını ve çevresini bulunuz.
+
+
+.Editable.c++
+
+[source,c++]
+
+----
+#include <iostream>
+#include <math.h>
+using namespace std;
+int main()
+{
+    cout << "Dik ucgen kontrolu" << endl;
+    
+    int a,b,c; // c yi hipotenüs olarak seçelim
+    
+    cout << "ucgenin a kenarlarini giriniz:" << endl;
+    cin >> a;
+    cout << "ucgenin b kenarlarini giriniz:" << endl;
+    cin >> b;
+    
+	c=sqrt(a*a+b*b);
+	 
+	cout<<"Hipotenus:"<<c<<endl;
+    
+    return 0;
+}
+----
+
+----
+Çıktı;
+Dik ucgen kontrolu
+ucgenin a kenarlarini giriniz:
+3
+ucgenin b kenarlarini giriniz:
+4
+Hipotenus:5
+Alan:6
+Cevre:12
+----
+
+====== soru 4
+
+Mesafeyi ve hızı alıp süreyi hesaplayan bir kod yazınız.Örneğin; İstanbul ile Ankara arası 400km olarak ölçülmektedir.Bu yolu ortalama 120km/saat hızla giden bir araç ne kadar sürede hedefe varır?
+
+.Editable.c++
+
+[source,c++]
+
+----
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    
+    int mesafe, hiz;
+    
+    cout << "mesafeyi giriniz:" << endl;
+    cin >> mesafe;
+    
+    cout << "hizinizi giriniz:" << endl;
+    cin >> hiz;
+    
+    int saat = mesafe/hiz;
+    
+    float dakikakismi = (float)mesafe/hiz - (int)mesafe/hiz;
+    int dakika= dakikakismi * 60;
+    
+    cout << "tahmini varis sureniz:" << (int)saat << "saat ve" << dakika << "dakikadir."<< endl;
+    
+    
+    return 0;
+}
+
+----
+----
+Çıktı;
+
+mesafeyi giriniz:
+400
+hizinizi giriniz:
+120
+tahmini varis sureniz:3 saat ve 19 dakikadir.
+----
+
+====== soru 5
+
+Kullanıcan üç adet sayı alarak bu sayıların bir dik üçgenin kenar uzunlukları olup olmadığını hesaplayan bir kod yazınız.(Yardım:Bir üçgenin dik olduğunu anlamak için a^2+b^2=c^2 pisagor bağlantısından yararlanabilirsiniz.)
+
+.Editable.c++
+
+[source,c++]
+
+----
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    
+    int a,b,c; 
+    
+    cout << "ucgenin kenarlarini giriniz:" << endl;
+    cin >> a;
+    cin >> b;
+    cin >> c; 
+    
+    if (a*a + b*b == c*c || c*c + b*b == a*a || a*a + c*c == b*b) {
+        cout << "dik ucgendir" << endl;
+        }
+    
+    else {
+        cout << "dik ucgen degildir" << endl;
+        }
+    
+    return 0;
+}
+
+----
+----
+Çıktı;
+
+ucgenin kenarlarini giriniz:
+3
+4
+5
+dik ucgendir
+----
+
+====== soru 6
+
+**Fibonacci serisi**nin ilk iki elemanı 1'dir ve diğer elemanları, kendisinden önce gelen son iki elemanın toplamıdır.Klavyeden bir sayı okuyarak, girilen sayı kadar fibonacci serisinin elemanını ekrana bastıran kodu yazınız.
+
+.Editable.c++
+
+[source,c++]
+
+----
+
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a=1;
+	int b=1;
+	int adet;
+	cout<<"kac adet eleman ekrana basilsin:";
+	cin>>adet;
+	if(adet==1)
+	   cout<<1<<endl;
+	else if(adet<=0);//noktalı virgül ekrana hiçbir şey yazma anlamında kullanılmıştır
+	else
+	{
+		    cout<<a<<endl<<b<<endl;
+			for(int i=0;i<=adet;i++)
+			{
+				int c=a+b;
+				a=b;
+				b=c;
+				cout<<c<<endl;
+			}
+	}
+
+} 
+
+----
+Çıktı;
+
+kac adet eleman ekrana basilsin: 8
+
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+
+----
+====== soru 7
+
+Kullanıcıdan bir sayı alıp verilen sayı kadar sayıyı okuyunuz.Bu sayıların içerisindeki pozitif, negatif ve sıfırların oranını döndürünüz.
+
+.Editable.c++
+
+[source,c++]
+
+----
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int adet;
+	cout<<"lutfen kac sayi gireceginizi yaziniz:";
+	cin>>adet;
+	int sayacN=0, sayacP=0, sayacS=0;
+	for(int i=0;i<adet;i++)
+	{
+		int temp;//gecici olarak dongude okunan sayi
+		cin>>temp;
+		if(temp>0)
+			sayacP++;
+		else if(temp<0)
+			sayacN++;
+		else
+		    sayacS++;
+	}
+	cout<<"Pozitifler:"<<(float)sayacP/adet<<endl;
+	cout<<"Negatifler:"<<(float)sayacN/adet<<endl;
+	cout<<"Sifirlar:"<<(float)sayacS/adet<<endl;
+}
+
+----
+Çıktı;
+lutfen kac sayi gireceginizi yaziniz:6
+-1
+6
+-3
+2
+4
+0
+Pozitifler:0.5
+Negatifler:0.333333
+Sifirlar:0.166667
+----
+
+
+
+

@@ -207,7 +207,7 @@ return 0; ;; <5>
 
  !8!tablo  
  
-*https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#tables)*
+https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/#tables)
 eklemeniz gerekir. 
 
 

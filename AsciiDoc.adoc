@@ -1,0 +1,697 @@
+= AsciiDoc Kullanım Kılavuzu
+
+== 1. AsciiDoc nedir?
+
+Asciidoctor, AsciiDoc içeriğini HTML5, DocBook 5, EPUB3, PDF ve diğer biçimlere dönüştürmek için kullanılan hızlı bir metin işlemcisi ve yayın aracıdır. Asciidoctor, Python tabanlı AsciiDoc projesinde tanıtılan ve uygulanan AsciiDoc sözdiziminin lider uygulamasıdır.
+
+Asciidoctor Ruby'de yazılmıştır ve JRuby de dahil olmak üzere herhangi bir Ruby çalışma zamanında kullanılabilir. Ayrıca JVM'de, altında JRuby'yi kullanan resmi bir Java API'si olan AsciidoctorJ aracılığıyla çalıştırılabilir ya da Ruby kod tabanının dönüştürülmüş bir sürümü olan Asciidoctor.js kullanılarak JavaScript'te çalıştırılabilir.
+
+Asciidoctor MIT lisansı altında açık kaynak kodludur. Asciidoctor RubyGem https://rubygems.org/gems/asciidoctor[rubygems.org]'da yayınlanmıştır ve sağlanan paketlerden birini kullanarak birçok popüler Linux dağıtımına kurulabilir. Projenin git depoları, en geniş katılımı teşvik etmek için https://github.com/asciidoctor[GitHub'daki Asciidoctor organizasyonu] altında barındırılmaktadır.
+
+
+== 2. Başlıklar
+
+=== 2.1 Belge Başlığı
+
+Başlık, boş satırlar içeremez ve içerikten en az bir boş satırla kaydırılmalıdır.
+
+*Başlık seviyeleri:*
+
+= Döküman başlığı (seviye 0)
+
+Metin içeriği...
+
+== Başlık seviye 1
+
+Metin içeriği...
+
+=== Başlık seviye 2
+
+Metin içeriği...
+
+==== Başlık seviye 3
+
+Metin içeriği...
+
+===== Başlık seviye 4
+
+Metin içeriği...
+
+====== Başlık seviye 5
+
+Metin içeriği...
+
+
+=== 2.2 Blok Başlığı
+
+
+Herhangi bir paragrafa, listeye, ayrılmış bloğa veya blok makrosuna bir başlık atayabilirsiniz. Çoğu durumda, başlık içeriğin hemen üzerinde görüntülenir. İçerik bir şekil veya resim ise, başlık içeriğin altında görüntülenir.
+
+Bir blok başlığı, ögenin üzerindeki bir satırda tanımlanır. Satır bir nokta (.) ile başlamalı ve hemen başlık metni ile takip edilmelidir.
+
+İşte başlıklı bir liste örneği:
+
+.Yapılıcak listesi
+- AsciiDoc kullanımını öğren
+- Asciidoctor kurulumunu yap
+- Yazmaya başla!
+
+
+== 3. Paragraflar
+
+Paragraflar AsciiDoc'ta herhangi bir özel biçimlendirme gerektirmez.
+Bir paragraf ardışık metnin yalnızca bir veya daha fazla satırıdır.
+
+Yeni bir paragrafa başlamak için, en az bir boş satır ile ayırın.
+Paragraf içindeki yeni satırlar görüntülenmez.
+
+== 4. Metin Biçimlendirme
+
+Tıpkı konuştuğumuzda bazı kelimeleri ve cümleleri vurguladığımız gibi, metinleri biçimlendirme ile vurgulayabiliriz. Kalın veya tek aralık gibi bu biçimlendirme, çevreleyen harfler, kelimeler veya basit işaretleme içeren ifadelerle belirtilir.
+
+=== 4.1 Kalın ve italik metin
+
+Bir sözcüğü vurgulamanın en yaygın iki yolu, onu koyu veya italik olarak biçimlendirmektir.
+
+Bir kelimeye veya cümleye kalın stil uygulamak için, biçimlendirmek istediğiniz metnin başına ve sonuna bir yıldız işareti ( * ) yerleştirin. Bir harf veya harfleri bir metin dizisinde kalınlaştırmak için, harf veya harflerden önce ve sonra iki yıldız işareti ( ** ) yerleştirin .
+
+Harfler ve kelimeler bir ( _ ) veya iki ( __ ) alt çizgi kullanılarak italikleştirilir . Bir harf veya sözcüğü kalınlaştırmak ve italikleştirmek istediğinizde, kalın işaretleme en dıştaki işaretleme olmalıdır.
+
+*Örneğin;*
+
+_Elma_ *Eski Türkçe'de* *_alma_* diye bilinen adının, _meyvenin rengi olan_ **al** (__kırmızı__)'dan geldiği **bilinmektedir**.
+
+
+=== 4.2 Altı ve üstü çizili metin
+
+Bir kelime veya cümleyi altı çizili göstermek için kelime veya cümlenin başına ( [underline]# ) sonuna ise ( # ) işaretlerini yerleştiririz.
+
+Bir kelime veya cümleyi üstü çizili göstermek için kelime veya cümlenin başına ( [line-through]# ) sonuna ise ( # ) işaretlerini yerleştiririz.
+
+*Örneğin;*
+
+[underline]#AsciiDoc# öğrenilmesi [line-through]#kolay# olduğu kadar [line-through]#zor# bir uygulamadır.
+
+== 5. Listeler
+
+=== 5.1 Sınırsız listeler
+
+Aşağıdaki örnekte, her liste maddesi, bir sıralanmamış liste öğesi belirten AsciiDoc sözdizimi olan bir yıldız işareti ( * ) ile işaretlenmiştir.
+
+Bir liste öğesinin ilk metin satırı işaretleyiciden ( *) en az bir boşluk ile kaydırılmalıdır . İsterseniz liste öğelerini girintili yapabilirsiniz. Bir listeden önce ve sonra boş satırlar gerekir. Ek olarak, liste öğeleri arasında boş satırlara izin verilir, ancak gerekli değildir.
+
+*Örneğin;*
+
+* C
+* C++
+* Java
+
+Başlığı nokta ( .) ile ön ekleyerek listeye bir başlık ekleyebilirsiniz.
+
+*Örneğin;*
+
+.Programlama Dilleri
+* C
+* C++
+* Java
+
+Tire işaretçisi ( -) ile de liste ögelerini sıralayabiliriz ancak iç içe geçmiş listelerde çalışmadığından , yalnızca bir düzeyi olan listeler için tire kullanmalısınız . 
+
+*Örneğin;*
+
+- C
+- C++
+- Java
+
+=== 5.1 İç içe listeler
+
+Bir öğeyi yuvalamak için, işaretçiye başka bir yıldız işareti ( * ) ve sonraki her bir seviye için bir tane daha ekleyin.
+
+*Örneğin;*
+
+
+* İç Donanım Birimleri
+** Anakart
+** İşlemci
+** Bellek
+* Dış Donanım Birimleri
+** Monitor
+*** LCD
+*** LED
+** Klavye
+** Fare
+
+=== 5.2 Kontrol listeler
+
+Kontrol listeleri (yani görev listeleri), işaretli ( [*]veya [x]) veya işaretsiz ( [ ]) olarak işaretlenmiş öğelere sahip olan sıralanmamış listelerdir .
+
+*Örneğin;*
+
+* [*] işaretli liste öğesi
+* [x] işaretli liste öğesi
+* [ ] işaretsiz liste öğesi
+*     normal liste öğesi
+
+=== 5.3 Sıralı listeler
+
+Liste ögelerinin belli bir sıra ile listelenmesi.
+
+*Örneğin;*
+
+. Sıra 1
+. Sıra 2
+.. Sıra 2a
+.. Sıra 2b
+. Sıra 3
+
+== 6. Admonition - Uyarı
+
+İçeriğin akışından ayırıp öncelikli olarak etiketleyerek dikkat çekmek isteyebileceğiniz bazı ifadeler var. Bunlara tavsiye-öneri-uyarı diyebiliriz. Oluşturulan stil(yani değer), atanan etiketle belirlenir. Asciidoctor beş tavsiye stili etiketi sağlar:
+
+* NOTE
+
+* TIP
+
+* IMPORTANT
+
+* CAUTION
+
+* WARNING 
+
+
+Tek bir paragrafa dikkat çekmek istediğinizde, paragrafın ilk satırını kullanmak istediğiniz etiketle başlatın. Etiket büyük harflerle yazılmalıdır ve sonrasında bir adet iki nokta üst üste ( : ) koyulup bir tab boşluk bırakılarak istanilenler yazılmalıdır.
+
+NOTE: Okuyucunun dikkatini çeken bir tavsiye paragrafı ya da yardımcı bilgi...
+
+TIP: İpucu...
+
+IMPORTANT: Unutma...
+
+CAUTION: Emin olun...
+
+WARNING: Dikkat...
+
+Etikete başlık eklemek için aşağıdaki örneği inceleyiniz:
+
+*Örneğin;*
+
+.İçeriğe Uygun Başlık
+[NOTE]
+Bu örnek bir tek paragraflı nottur.
+
+== 7. Tablolar
+
+Asciidoctor'da bir tablo tanımladığımız zaman, sütunların tümü aynı genişliğe sahiptir ve tablo sayfanın tüm genişliğini gösterir. Tabiki bunu tanımladığımız zaman bunu değiştirebiliriz. Tablonun sütun  sayısını *column* niteliği ile değiştirebiliriz . Satır sayısını *rows* özniteliği ile belirtiriz .
+
+Aşağıdaki sözdizimini kullanarak Asciidoc'ta tablolar da oluşturabilirsiniz.
+
+*Örneğin;*
+
+.Bu tablonun isteğe bağlı başlığı
+|===
+| Sütun 1'in Adı | Sütun 2'nin Adı
+
+| Sütun 1'deki hücre, satır 1
+| Sütun 2'deki hücre, satır 1
+
+| Sütun 1'deki hücre, satır 2
+| Sütun 2'deki hücre, satır 2
+|===
+
+Tablo oluştururken kullanım amacına göre şekil ayarı verebiliriz.Örneğin;
+
+*Örneğin;*
+
+.Örnek bir tablo 1
+[options="header,footer"]
+|=======================
+|0    |a          |4
+|1    |b          |3
+|2    |c          |2
+|3    |d          |1
+|4    |e          |0
+|=======================
+
+*Örneğin;*
+
+.Örnek bir tablo 2
+[format="csv",width="60%",cols="4"]
+[frame="topbot",grid="none"]
+|======
+1,2,3,4
+a,b,c,d
+A,B,C,D
+|======
+
+*Örneğin;*
+
+
+.Örnek bir tablo 3
+|====
+|Tarih |Saat |Kontenjan |Ders
+
+|22-Aug-08 .2+^.^|10:24 | 157 |
+Bilgisayar Mühendisliğine Giriş(1. Sınıflar için)
+
+|22-Aug-08 | 152 |
+Diferansiyel Denklemler(2.Sınıflar için)
+
+|24-Aug-08 3+^|TATİL
+
+|====
+
+=== 7.1 Diyagram Ekleme
+
+Ditaa, metin açıklamalarından genel diyagramlar oluşturmaya izin veren bir Açık Kaynak projesidir. Bu fikir PlantUML'ye yakındır ve dokümantasyon için UML'den başka diyagramlar oluşturmak için faydalı olabilir.
+
+.Temel ditaa bloğu
+[ditaa]
+....
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |   diagram   |       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ |        | --+ Asciidoctor +--> |               |
+ |  Text  |   +-------------+    |   Beautiful   |
+ |Document|   |   !magic!   |    |    Output     |
+ |     {d}|   |             |    |               |
+ +---+----+   +-------------+    \---------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+....
+
+
+Aşağıdaki örnek, doğrudan bir AsciiDoc belgesinde yazılmış temel bir PlantUML bloğunun yapısını gösterir.
+
+
+.PlantUML Diyagramı Sözdizimi
+[plantuml, diagram-classes, png]     
+....
+class BlockProcessor
+class DiagramBlock
+class DitaaBlock
+class PlantUmlBlock
+
+BlockProcessor <|-- DiagramBlock
+DiagramBlock <|-- DitaaBlock
+DiagramBlock <|-- PlantUmlBlock
+....
+
+Diyagram PlantUML'ye yazılmıştır, bu nedenle ilk konumsal niteliğe plantuml diyagram tipine atanmıştır.Oluşturulan diyagram dosyasının (hedef) adı, ikinci konum niteliğinde yazılır.Çıkış formatı üçüncü konumsal nitelikte girilir.
+
+=== 7.2 Matematiksel Formülleri Kullanma
+
+http://www.mathjax.org/Г[MathJax], tüm tarayıcılarda çalışan (((matematik))) matematiği için açık kaynaklı bir JavaScript görüntü motorudur. Png çıktısına ek olarak, svg çıktısını da üretebilirsiniz. Sadece uzantıyı değiştir.
+
+.Tex Example
+[math,file="tex-formula.png"]
+--
+\begin{align}
+\dot{x} & = \sigma(y-x) \\
+\dot{u} & = \rho x - y - xz \\
+\dot{z} & = -\beta z + xyz
+\end{align}
+--
+
+AsciidocFX’teki matematiksel formülleri tanımlamak için Tex veya MathML dillerini kullanabilirsiniz. AsciidocFX bu metin formülünü png görüntüsü olarak dönüştürür.
+
+
+.MathML Example
+[math,file="mathml-formula.png"]
+--
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>x</mi>
+  <mo>=</mo>
+  <mrow>
+    <mfrac>
+      <mrow>
+        <mo>&#x2212;</mo>
+        <mi>b</mi>
+        <mo>&#xB1;</mo>
+        <msqrt>
+          <msup>
+            <mi>b</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>&#x2212;</mo>
+          <mn>4</mn>
+          <mi>a</mi>
+          <mi>c</mi>
+        </msqrt>
+      </mrow>
+      <mrow>
+        <mn>2</mn>
+        <mi>a</mi>
+      </mrow>
+    </mfrac>
+  </mrow>
+  <mtext>.</mtext>
+</math>
+--
+
+
+== 8. Bağlantılar
+
+
+Asciidoc da bağlantı http: // veya https: // ile başlıyorsa, belgenizin içeriğindeki bağlantıları otomatik olarak belirler. Bağlantı metnini doğrudan bağlantıdan sonra [] aracılığıyla da tanımlayabilirsiniz.
+
+*Örneğin;*
+
+.Dış linkleri tanımlama
+
+http://asciidocfx.org - AsciidocFX
+
+http://asciidocfx.org[AsciidocFX]
+
+https://github.com/asciidoctorLEXAsciidoctor @ * GitHub *]
+
+
+.Boşluklarla ve özel karakterler ile tanımlama
+
+link:++https://example.org/?q=[a b]++[URL with special characters]
+
+link:https://example.org/?q=%5Ba%20b%5D[URL with special characters]
+
+
+.E-posta ve IRC ile tanımlama
+
+devel@discuss.arquillian.org
+
+mailto:devel@discuss.arquillian.org[Discuss Arquillian]
+
+mailto:devel-join@discuss.arquillian.org[Subscribe,Subscribe me,I want to join!]
+
+irc://irc.freenode.org/#fedora
+
+== 9. Görüntü
+
+Görüntüler, varsayılan olarak boş olan *images::* belge özniteliğinin değerine göre çözümlenir . *images::* her görüntü makrosunda resimlerinize ortak yolu zor kodlamaktan kaçınmak için bu özelliği kullanmanız teşvik edilir .
+
+*images::* nitelik mutlak yolu göreli yolu veya temel URL olabilir. Resim hedefi bir URL veya mutlak bir yol olduğunda, imagesdir öneki hazır değildir.
+
+* Bir görüntüyü kendi satırına dahil etmek için (yani, bir blok görüntü ), *image::* öndeki dosya adını ve köşeli parantezleri kullanın.
+
+
+*Örneğin;*
+
+image::sunset.png[]
+
+* Alt metni belirtmek istiyorsanız, köşeli parantezin içine ekleyin:
+
+*Örneğin;*
+
+image::sunset.png[Sunset]
+
+* Ayrıca görüntüye bir kimlik, bir başlık verebilir, boyutlarını ayarlayabilir ve bir bağlantı oluşturabilirsiniz.
+
+
+.  [#img-sunset] 
+.  .Bir dağ gün batımı 
+.  [link=https://www.flickr.com/photos/javh/5448336655] 
+.  image::sunset.png[Sunset,300,200] 
+
+1->Bloğa bir kimlik atar;https://asciidoctor.org/docs/user-manual/#images[ bkz bir Anchor tanımlama] .
+
+2->Oluşturulduğunda görüntünün altında görüntülenecek blok görüntünün başlığını tanımlar.
+
+3->link görüntüyü bir bağlantı yapar (bu, makro bloğun öznitelik listesinde de tanımlanabilir)
+
+4->İlk konumsal nitelik olan Sunset , görüntünün alt metnidir.
+İkinci ve üçüncü konumsal nitelikler sırasıyla genişlik ve yüksekliği tanımlar.
+
+*Sonuç aşağıdaki gibi görünüyor.*
+
+[#img-sunset] 
+.Bir dağ gün batımı
+[link=https://www.flickr.com/photos/javh/5448336655] 
+image::sunset.png[Sunset,300,200]   
+
+
+== 10. Video
+
+Blok video makrosu, videoları belgelerinize yerleştirmenizi sağlar. Kendi kendine barındırılan videoları veya YouTube ve Vimeo gibi popüler video barındırma sitelerinde paylaşılan videoları gömebilirsiniz.
+
+Asciidoctor'un desteklediği video formatları, tarayıcının desteklediği formatlar tarafından belirlenir (ve ardından kullanıcının sistemi). Bu bir zamanlar güvencesiz bir sıkıntı olsa da, HTML5 tarayıcıdaki video desteğine adanmış bir **<video>** eleman ekleyerek ve birkaç standart video formatı tanıtarak akıl sağladı . Bu biçimler artık tarayıcılar ve sistemler arasında yaygın olarak desteklenmektedir.
+
+Desteklenen web video formatlarının kanonik bir listesi ve modern tarayıcılarla etkileşimleri için https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats#Browser_compatibility[Mozilla Geliştirici Desteklenen Ortam Formatları] belgelerine bakın.
+
+.Temel video dosyası
+ video::video_file.mp4[]
+ 
+Makrodaki ek özellikleri kullanarak video ayarlarını kontrol edebilirsiniz. Örneğin, [underline]#start# özniteliği kullanarak oynatmanın başlangıç ​​zamanını dengeleyebilir ve [underline]#autoplay# seçeneği kullanarak otomatik oynatmayı etkinleştirebilirsiniz .
+
+.Yerel video oynatımı için nitelikleri ayarlama
+ video::video_file.mp4[width=640, start=60, end=140, options=autoplay]
+
+Başlık özelliğini kullanarak videoya bir başlık ekleyebilirsiniz.
+
+.Videoya başlık ekleme
+ .Ürünün içinde bir gezinti
+ video::video_file.mp4[]
+
+.Bir YouTube videosu yerleştirme
+ video::rPQoq7ThGAU[youtube]
+
+.Bir Vimeo videosu yerleştirme
+ video::67480300[vimeo]
+
+*Sonuç aşağıdaki gibi görünüyor.*
+
+video::67480300[vimeo]
+
+== 11. KOD
+
+Geliştiriciler, kodun yapısını vurgulamak için renklendirilmiş kaynak kodunu görmeye alışıktır (anahtar kelimeler, türler, sınırlayıcılar vb.). Bu teknik _sözdizimi vurgulama_ olarak bilinir . Bu teknik çok yaygın olduğu için Asciidoctor, belgenizdeki kaynak kod bloklarını vurgulamak için sözdizimi için zengin kütüphaneleri bir araya getirir. Entegre kütüphanelerin listesi Rouge, CodeRay, Pygments, highlight.js ve güzelleştirmeyi içerir.
+
+=== 11.1 Kaynak Kod
+
+.Başlıklı listeleme bloğu, sözdizimi vurgulama yok
+****
+.Gemfile.lock
+----
+GEM
+  remote: https://rubygems.org/
+  specs:
+    asciidoctor (1.5.6.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  asciidoctor (~> 1.5.6.1)
+----
+****
+
+.Başlık ve sözdizimi vurgulamalı kod bloğu
+****
+.app.rb
+[source,ruby]
+----
+require 'sinatra'
+
+get '/hi' do
+  "Hello World!"
+end
+----
+****
+
+=== 11.2  Kaynak Vurgulamayı Etkinleştirme
+
+Etkinleştirildiğinde, sözdizimi vurgulama, *source* blok stili ve kaynak dili olan listeleme veya değişmez bloklara uygulanır . Ancak, sözdizimi vurgulama varsayılan olarak etkin değildir .
+
+Bir belgede sözdizimi vurgulamasını etkinleştirmek için *source-highlighter* belge niteliğini ayarlamanız gerekir . Bu niteliği belgede veya CLI veya API'den ayarlayabilirsiniz.
+
+Özelliği belgede ayarlarsanız , https://asciidoctor.org/docs/user-manual/#doc-header[belge başlığında] tanımlanması gerekir .
+
+----
+= Document Title
+:source-highlighter: <value>
+----
+
+=== 11.3 Kaynak Vurgulama Uygulaması
+
+Kaynak koduna vurgulama uygulamak için, *source* blok stilini bir listeleme bloğuna, değişmez bloğa veya paragrafa eklemeniz ve bir kaynak dil belirtmeniz gerekir.
+
+
+.Belirtme çizgileri olan kod bloğu
+****
+[source,ruby]
+----
+require 'sinatra' // <1>
+
+get '/hi' do // <2>
+  "Hello World!" // <3>
+end
+----
+<1> Kütüphane içe aktarma
+<2> URL eşleme
+<3> HTTP yanıt gövdesi 
+****
+
+
+.Seçilemeyen bilgileri içeren kod bloğu
+****
+  ----
+ kod satırı // <1>
+ kod satırı # <2>
+ kod satırı ;; <3>
+ ----
+ 
+<1> C tarzı diller için bir çizgi yorumunun arkasındaki belirtme çizgisi.
+
+<2> Ruby, Python, Perl, vb. İçin çizgi yorumunun arkasındaki belirtme çizgisi.
+<3> Clojure için bir çizgi yorum arkasındaki belirtme çizgisi.
+****
+
+.Seçilemeyen bir belirtme çizgisine sahip XML kod bloğu
+****
+[source,xml]
+----
+<section>
+  <title>Bölüm Başlığı</title> <!--1-->
+</section>
+----
+<1> Bölüm başlığı gerekli. 
+****
+
+.Dosyadan kaynaklı kod bloğu
+ [source,ruby]
+ ----
+ include::app.rb[]
+ ----
+
+.Kaynak dizine göre dosyadan kaynaklı kod bloğu
+ :sourcedir: src/main/java
+ [source,java]
+ ----
+ include::{sourcedir}/org/asciidoctor/Asciidoctor.java[]
+ ----
+
+.Kaynaktan gelen satır arası kod bloğu
+ [source,ruby,indent=0]
+ ----
+ include::lib/document.rb[lines=5..10]
+ ----
+
+NOTE: indent 0 olduğunda, satır bloğu girintisi sıyrılır (sekmeler 4 boşlukla değiştirilir).
+indent > 0 olduğunda, öncü blok girintisi önce sıyrılır (sekmeler 4 boşlukla değiştirilir), sonra bir blok bu değere eşit sütun sayısıyla girintili olur.
+
+
+.Sınırlayıcı içermeyen kod bloğu (boş satır yok)
+****
+[source,xml]
+<meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+ Bu normal bir içeriktir.
+****
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
